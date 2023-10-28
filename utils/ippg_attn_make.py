@@ -48,7 +48,6 @@ def diff_distance(input):
 
 
 def self_similarity_calc(ippg):
-    """计算标签波形自相关"""
     ippg_phase0 = myhilbert(ippg)
     ippg_phase = amass_hilbort(ippg_phase0)[1:]
     result_list = []

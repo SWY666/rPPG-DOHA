@@ -55,29 +55,6 @@ def my_peak_detect(sig, samplingrate):
 
 
 
-# def my_peak_detect(sig, samplingrate):
-#     bvp_detrend = detrend(sig, type='linear')  # useless...
-#     # bvp_detrend = polynomial(bvp, order=10)
-#     # # visualize detrend.
-#     # plt.figure()
-#     # plt.plot(bvp)
-#     # plt.plot(bvp_detrend)
-#
-#     height = np.mean(bvp_detrend)  # minimal required height.
-#     distance = samplingrate / 3  # Required minimal horizontal distance (>= 1) in samples between neighbouring peaks.
-#     peaks = find_peaks(bvp_detrend, height=height, distance=distance)[0]
-#
-#     hr_list = []
-#     if len(peaks) <= 1:  # during training, we only expect 2 peaks at least.
-#         hr = 0
-#     else:
-#         for i in range(len(peaks) - 1):
-#             hr = 60 * samplingrate / (peaks[i + 1] - peaks[i])
-#             hr_list.append(hr)
-#         hr = np.mean(np.array(hr_list))
-#     return hr, peaks
-
-
 def hr_cal(tmp, samplingrate=30):
     # tmp = tmp[10:-10]
     # tmp = tmp[5:-5]  # shorter than testing.
@@ -93,12 +70,6 @@ def hr_cal(tmp, samplingrate=30):
 
 
 def my_hr_cal(tmp, samplingrate=30):
-    # tmp = tmp[10:-10]
-    # tmp = tmp[5:-5]  # shorter than testing.
-    # f2 = 4
-    # b, a = signal.butter(4, [2 * f2 / samplingrate], 'lowpass')
-    # tmp = signal.filtfilt(b, a, np.array(tmp))
-
     f1 = 0.8
     f2 = 2.8
     samplingrate = samplingrate

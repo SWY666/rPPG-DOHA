@@ -38,12 +38,12 @@ class FFT_MODULE_1d(nn.Module):
             attn_zeros = torch.zeros(input.shape).unsqueeze(-1).to(torch.device(self.GPU_id))  # (45, 1)
         else:
             attn_zeros = torch.zeros(input.shape).unsqueeze(-1)
-        attn_real_and_image = torch.cat([input.squeeze().unsqueeze(-1), attn_zeros], -1)  # (45, 2), 实部+虚部
+        attn_real_and_image = torch.cat([input.squeeze().unsqueeze(-1), attn_zeros], -1)  # (45, 2)
         try:
             result = torch.fft(attn_real_and_image, 1)  # (45, 2)
         except:
             result = torch.fft.fft(attn_real_and_image, 1)
-        final_result = torch.norm(result, p=2, dim=1)  # (45, ), 求模长
+        final_result = torch.norm(result, p=2, dim=1)  # (45, ),
         return final_result
 
 
@@ -108,32 +108,6 @@ class Turn_map_into_waves(nn.Module):
         return amassed
 
 
-# class Reg_version_wave(nn.Module):
-#     def __init__(self, GPU_ID):
-#         super().__init__()
-#         self.fft_module_turner = FFT_MODULE_1d(GPU_ID)
-#         self.map_to_wave = Turn_map_into_waves()
-#
-#     def forward(self, attns):
-#         # attns: (B, 45, 45)
-#         waves = self.map_to_wave(attns)  # (B, 45)
-#         wave_list = torch.split(waves, 1, 0)  # B * 45
-#         result = []
-#         for i in range(len(wave_list)):
-#             tmp = self.solo_reg_make(wave_list[i].squeeze(0)).unsqueeze(0)
-#             result.append(tmp)
-#
-#         final_result = torch.mean(torch.cat(result, 0))
-#         return final_result
-#
-#     def solo_reg_make(self, input):
-#         # input: (45, )
-#         wave_altered = self.fft_module_turner.solo_fft_1d_make(input)  # (45, ), FFT频谱幅度（模长）
-#         lens = wave_altered.shape[0]
-#         select_space = (1, 1 + int(lens/2))  # (1, 23)
-#         max_index = torch.argmax(wave_altered[select_space[0]:select_space[1]], 0) + select_space[0]  # 幅度谱峰所在频率
-#         judgement = 1 - (wave_altered[max_index] / torch.sum(wave_altered[select_space[0]:select_space[1]]))  # 谱峰幅度占总频谱的比例
-#         return judgement
 
 
 class Reg_version_wave(nn.Module):
@@ -145,8 +119,8 @@ class Reg_version_wave(nn.Module):
         for i in range(SSMap.shape[0]):  # batch.
             loss_batch.append(self.std_regular(SSMap[i]).unsqueeze(0))
 
-        tmp = torch.cat(loss_batch, 0) # 用于GHM
-        # loss = torch.mean(tmp) # 正常loss的输出
+        tmp = torch.cat(loss_batch, 0)
+        # loss = torch.mean(tmp)
         return tmp, tmp.detach()
 
     @staticmethod
