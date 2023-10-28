@@ -25,3 +25,23 @@ By replacing the traditional ground truth label to our proposed SCS map for rPPG
 <div align=center><img src="img_bank/HPS.png" width="80%" ></div>
 
 **Note**: When selecting the ground truth signal (e.g., BVP signal), we choose the **identical timestamps** that "match" the input video. For example, if we select the video slice (from 10s to 20s) in the video, we pick the ground truth signal (from 10s to 20s) too. **Noteworthy**, even though we match the timestamps of the input video and the ground truth signal, we still can't ensure that these two are aligned due to the uncertain temporal delay. **Nevertheless**, our method can neutralize such a temporal delay, making the training more accessible and efficient.
+
+
+## Still under construction!
+Thanks for your reading! If this project can help you, we hope you could cite our works!
+
+> @inproceedings{10.1145/3581783.3612265,author = {Sun, Weiyu and Zhang, Xinyu and Lu, Hao and Chen, Ying and Ge, Yun and Huang, Xiaolin and Yuan, Jie and Chen, Yingcong},
+title = {Resolve Domain Conflicts for Generalizable Remote Physiological Measurement},
+year = {2023},
+isbn = {9798400701085},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3581783.3612265},
+doi = {10.1145/3581783.3612265},
+booktitle = {Proceedings of the 31st ACM International Conference on Multimedia},
+pages = {8214–8224},
+numpages = {11},
+keywords = {physiological signal estimation, multimedia application, rppg},
+location = {Ottawa ON, Canada},
+series = {MM '23}
+}
