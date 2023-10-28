@@ -28,7 +28,7 @@ By replacing the traditional ground truth label to our proposed SCS map for rPPG
 
 
 ## Still under construction! 😍 😍 😍
-Thanks for your reading! If this project can help you, we hope you could cite our works!
+Thanks for your reading! If this project is helpful to you, we hope you can cite our work as follows! 🥳🥳🥳
 
 > @inproceedings{10.1145/3581783.3612265,author = {Sun, Weiyu and Zhang, Xinyu and Lu, Hao and Chen, Ying and Ge, Yun and Huang, Xiaolin and Yuan, Jie and Chen, Yingcong},
 title = {Resolve Domain Conflicts for Generalizable Remote Physiological Measurement},
