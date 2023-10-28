@@ -27,7 +27,7 @@ By replacing the traditional ground truth label to our proposed SCS map for rPPG
 **Note**: When selecting the ground truth signal (e.g., BVP signal), we choose the **identical timestamps** that "match" the input video. For example, if we select the video slice (from 10s to 20s) in the video, we pick the ground truth signal (from 10s to 20s) too. **Noteworthy**, even though we match the timestamps of the input video and the ground truth signal, we still can't ensure that these two are aligned due to the uncertain temporal delay. **Nevertheless**, our method can neutralize such a temporal delay, making the training more accessible and efficient.
 
 
-## Still under construction!
+## Still under construction! :smiling_face_with_heart_eyes: :smiling_face_with_heart_eyes: :smiling_face_with_heart_eyes:
 Thanks for your reading! If this project can help you, we hope you could cite our works!
 
 > @inproceedings{10.1145/3581783.3612265,author = {Sun, Weiyu and Zhang, Xinyu and Lu, Hao and Chen, Ying and Ge, Yun and Huang, Xiaolin and Yuan, Jie and Chen, Yingcong},
