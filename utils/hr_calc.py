@@ -81,16 +81,16 @@ def my_hr_cal(tmp, samplingrate=30):
     return hr_caled, tmp, peaks
 
 
-def my_hr_cal_nk(ppg, samplingrate=30):
-    hrv = {}
-    sig_output, info_output = nk.ppg_process(ppg, sampling_rate=samplingrate)
-    peaks = info_output['PPG_Peaks']
-    ppg_output = nk.ppg_intervalrelated(sig_output, sampling_rate=samplingrate)
-    hr = ppg_output['PPG_Rate_Mean'].to_list()[0]
-    hrv['HRV_LFn'] = ppg_output['HRV_LFn'].to_list()[0]
-    hrv['HRV_HFn'] = ppg_output['HRV_HFn'].to_list()[0]
-    hrv['HRV_LFHF'] = ppg_output['HRV_LFHF'].to_list()[0]
-    return hr, hrv, peaks
+# def my_hr_cal_nk(ppg, samplingrate=30):
+#     hrv = {}
+#     sig_output, info_output = nk.ppg_process(ppg, sampling_rate=samplingrate)
+#     peaks = info_output['PPG_Peaks']
+#     ppg_output = nk.ppg_intervalrelated(sig_output, sampling_rate=samplingrate)
+#     hr = ppg_output['PPG_Rate_Mean'].to_list()[0]
+#     hrv['HRV_LFn'] = ppg_output['HRV_LFn'].to_list()[0]
+#     hrv['HRV_HFn'] = ppg_output['HRV_HFn'].to_list()[0]
+#     hrv['HRV_LFHF'] = ppg_output['HRV_LFHF'].to_list()[0]
+#     return hr, hrv, peaks
 
 
 def hr_cal_freq(sig, samplingrate, harmonics_removal=True, filter=True):
