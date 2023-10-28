@@ -1,5 +1,5 @@
 # DOHA-rPPG (DOmain-HArmonious framework)
-This is the code corresponding to the paper ["Resolve Domain Conflicts for Generalizable Remote Physiological Measurement."](https://dl.acm.org/doi/10.1145/3581783.3612265) accepted in ACM MM 2023:fire: :fire: :fire:.
+This is the code corresponding to the paper ["Resolve Domain Conflicts for Generalizable Remote Physiological Measurement."](https://dl.acm.org/doi/10.1145/3581783.3612265) accepted in ACM MM 2023. :fire: :fire: :fire:
 
 ## What is rPPG? :crossed_fingers: :crossed_fingers: :crossed_fingers:
 Generally speaking, remote photoplethysmography (rPPG) is a special  kind of physiological measurement which measures the physiological information (such as heart rate) of the subject through his/her facial video. The overall workflow of a typical rPPG is shown as follows:
