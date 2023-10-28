@@ -12,4 +12,8 @@ The key element of rPPG is to extract the so-called **rPPG signal** from the fac
 ## Current domain conflict Issues of DNN rPPG model training:
 Related databases for rPPG model training have the following flaws. (1) **Label Conflict**: The ground truth rPPG signals (e.g., BVP signal) in the database are not uniformed in time, i.e., there exist a unknown temporal delay between label and truth rPPG signal. (2) **Attribute Conflict**: The individual variability of data (e.g., skin color, ambient light) renders the rPPG model inefficient to train. We illustrate above two issues as follows:
 
-![Two conflict issues?](img_bank/ACM_MM_2023_Heart_Rate_seal.png "two conflict issues")
+<!-- ![Two conflict issues?](img_bank/ACM_MM_2023_Heart_Rate_seal.png "two conflict issues") -->
+
+<!-- ![Two conflict issues?](img_bank/ACM_MM_2023_Heart_Rate_seal.png)  -->
+
+<div align=center><img src="img_bank/ACM_MM_2023_Heart_Rate_seal.png" width="60%" ></div>
