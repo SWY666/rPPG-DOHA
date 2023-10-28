@@ -14,7 +14,7 @@ Related databases for rPPG model training have the following flaws. (1) **Label 
 
 <div align=center><img src="img_bank/ACM_MM_2023_Heart_Rate_seal.png" width="60%" ></div>
 
-## Harmonious Phase Strategy. :index_pointing_up: :index_pointing_up: :index_pointing_up:
+## Harmonious Phase Strategy. :oncoming_fist: :oncoming_fist: :oncoming_fist:
 
 We focus on the self-similarity property of rPPG signal (which is periodical approximately), and thus generate a novel label representation, namely self-cosine-similarity (SCS) map, shown as follows:
 
