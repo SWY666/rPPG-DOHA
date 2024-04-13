@@ -6,7 +6,7 @@ Generally speaking, remote photoplethysmography (rPPG) is a special  kind of phy
 
 ![What is rPPG?](img_bank/What_is_rPPG.png "rPPG")
 
-The key element of rPPG is to extract the so-called **rPPG signal** from the facial video. The rPPG signal is regarded to presented the similar physiological features with **Blood Volume Pulse (BVP) signal**, from which we can extract various physiological information, such as heart rate.
+The key element of rPPG is to extract the so-called **rPPG signal** from the facial video. The rPPG signal is regarded to presented the similar physiological features with **Blood Volume Pulse (BVP) signal**, from which we can extract various physiological information, such as heart rate and heart rate variation (maybe?).
 
 
 ## Current domain conflict Issues of DNN rPPG model training. :love_you_gesture: :love_you_gesture: :love_you_gesture:
