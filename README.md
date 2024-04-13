@@ -15,13 +15,13 @@ The key element of rPPG is to extract the so-called **rPPG signal** from the fac
 
 
 
-<!-- ## Quick Start of our methodology
+## Quick Start of our methodology
 
-1. Suppose you have original dataset with following 
+You can run an example of our method by executing the following command. This code utilizes **perticipant 1 (p1)** in VIPL-HR dataset for training the model in (**models/model.py (Ultimate_model)**!) You can see the default hyper-parameter setting in the ***get_args_parser*** function in **quick_start.py**!
 
 ```
-
-``` -->
+> python quick_start.py --dataset_place  ./mini_vipl_data/vipl-frame-mini --GPU-id 0
+```
 
 
 
