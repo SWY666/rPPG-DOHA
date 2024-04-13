@@ -8,12 +8,14 @@ This is the code corresponding to the paper ["Resolve Domain Conflicts for Gener
 
 ## Quick Start of our methodology
 
-1. **Quick start:** You can run an example of our method by executing the following command. This code utilizes **perticipant 1 (p1)** in VIPL-HR dataset [1] for training the model in (**models/model.py (Ultimate_model)**!) You can see the default hyper-parameter setting in the ***get_args_parser*** function in **quick_start.py**!
+### **Quick start**
+
+You can run an example of our method by executing the following command. This code utilizes **perticipant 1 (p1)** in VIPL-HR dataset [1] for training the model in (**models/model.py (Ultimate_model)**!) You can see the default hyper-parameter setting in the ***get_args_parser*** function in **quick_start.py**!
 
 ```
 > python quick_start.py --dataset_place  ./mini_vipl_data/vipl-frame-mini --GPU-id 0
 ```
-2. **Introduction of the dataloader (may vary between different rPPG network trainers):**
+### Introduction to our specialized dataloader (may vary between different rPPG network trainers)
 
 In brief, the ouput format of our data loader is shown as follows:
 
@@ -26,8 +28,13 @@ where the **real_image_train** (shape: [batch size, 3, frame_length, width, heig
 ```
 train_attn_label = self_similarity_calc(wave_label) # this function can be found in utils/ippg_attn_make.py!
 ```
+### Advice to trainers with different datasets and model backbones
 
+We utilize the TS-CAN as the backbone model (which requires both original and residual inputs), hence we need both **real_image_train** and **inputs**. For those trainers who utilize another pipeline, it is recommended that you can switch our dataloader that suits you best (note: Ground truth label (**train_attn_label**, which is used for our model training) should be kept for training the model via our method)!
 
+[1] VIPL-HR: A Multi-modal Database for Pulse Estimation from Less-constrained Face Video
+
+[2] "DeepPhys: Video-Based Physiological Measurement Using Convolutional Attention Networks" https://arxiv.org/abs/1805.07888.
 
 
 ## What is rPPG? :crossed_fingers: :crossed_fingers: :crossed_fingers:
