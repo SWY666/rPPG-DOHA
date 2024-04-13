@@ -3,9 +3,7 @@ This is the code corresponding to the paper ["Resolve Domain Conflicts for Gener
 
 ## Recent updates
 
-**2024.Apr.13**  Provide a simple demonstration on how to train a rPPG model based on our methodology.
-
-
+**2024.Apr.13**  Provide a simple demonstration on how to train a rPPG model based on our methodology. You can refer it in ***"Quick Start of our methodology"*** session!
 
 
 ## What is rPPG? :crossed_fingers: :crossed_fingers: :crossed_fingers:
@@ -17,13 +15,13 @@ The key element of rPPG is to extract the so-called **rPPG signal** from the fac
 
 
 
-## Quick Start of our methodology
+<!-- ## Quick Start of our methodology
 
 1. Suppose you have original dataset with following 
 
 ```
 
-```
+``` -->
 
 
 
