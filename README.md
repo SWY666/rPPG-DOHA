@@ -6,24 +6,36 @@ This is the code corresponding to the paper ["Resolve Domain Conflicts for Gener
 **2024.Apr.13**  Provide a simple demonstration on how to train a rPPG model based on our methodology. You can refer it in ***"Quick Start of our methodology"*** session!
 
 
+## Quick Start of our methodology
+
+1. **Quick start:** You can run an example of our method by executing the following command. This code utilizes **perticipant 1 (p1)** in VIPL-HR dataset [1] for training the model in (**models/model.py (Ultimate_model)**!) You can see the default hyper-parameter setting in the ***get_args_parser*** function in **quick_start.py**!
+
+```
+> python quick_start.py --dataset_place  ./mini_vipl_data/vipl-frame-mini --GPU-id 0
+```
+2. **Introduction of the dataloader (may vary between different rPPG network trainers):**
+
+In brief, the ouput format of our data loader is shown as follows:
+
+```
+for it, (inputs, real_image_train, train_attn_label, skin_mask, wave_label, path, start_f, end_f, _, index) in enumerate(data_loader):
+```
+
+where the **real_image_train** (shape: [batch size, 3, frame_length, width, heigh]) is the face region of interest extracted from the original facial video; **inputs** is the residual version of **real_image_train** (you can refer to Deepphys [2] to know about the residual version, in brief, **inputs** = **real_image_train[:,:,1:,:,:]-real_image_train[:,:,:-1,:,:]**); **wave_label** is the corresponding ground truth label of **real_image_train**, which have **an uncertain delay** between **real_image_train**; **train_attn_label** is the ST-MAP version of **wave_label**, you can utilize function ***self_similarity_calc*** to turn **wave_label** into **train_attn_label**, which is shown as follows:
+
+```
+train_attn_label = self_similarity_calc(wave_label) # this function can be found in utils/ippg_attn_make.py!
+```
+
+
+
+
 ## What is rPPG? :crossed_fingers: :crossed_fingers: :crossed_fingers:
 Generally speaking, remote photoplethysmography (rPPG) is a special  kind of physiological measurement which measures the physiological information (such as heart rate) of the subject through his/her facial video. The overall workflow of a typical rPPG is shown as follows:
 
 ![What is rPPG?](img_bank/What_is_rPPG.png "rPPG")
 
 The key element of rPPG is to extract the so-called **rPPG signal** from the facial video. The rPPG signal is regarded to presented the similar physiological features with **Blood Volume Pulse (BVP) signal**, from which we can extract various physiological information, such as heart rate and heart rate variation (**maybe?**).
-
-
-
-## Quick Start of our methodology
-
-You can run an example of our method by executing the following command. This code utilizes **perticipant 1 (p1)** in VIPL-HR dataset for training the model in (**models/model.py (Ultimate_model)**!) You can see the default hyper-parameter setting in the ***get_args_parser*** function in **quick_start.py**!
-
-```
-> python quick_start.py --dataset_place  ./mini_vipl_data/vipl-frame-mini --GPU-id 0
-```
-
-
 
 
 ## Current domain conflict Issues of DNN rPPG model training. :love_you_gesture: :love_you_gesture: :love_you_gesture:
